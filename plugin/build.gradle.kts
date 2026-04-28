@@ -29,7 +29,7 @@ dependencies {
     // Kotlin + coroutines van en el shadow JAR relocados: paperLibrary mezclaba classloaders y rompía
     // kotlin-reflect (KClassImpl) en Paper 1.21.11+ con BytecodeModifyingURLClassLoader.
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0-RC2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0-rc02")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
     implementation(kotlin("reflect"))
     implementation(kotlin("scripting-common"))
