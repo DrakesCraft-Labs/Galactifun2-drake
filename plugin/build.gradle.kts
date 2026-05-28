@@ -6,7 +6,7 @@ plugins {
 
     id("com.gradleup.shadow") version "9.4.1"
     id("net.minecrell.plugin-yml.paper") version "0.6.0"
-    id("xyz.jpenilla.run-paper") version "3.0.2"
+    id("xyz.jpenilla.run-paper") version "2.3.0"
 
     id("io.github.seggan.uom")
 }
@@ -30,7 +30,7 @@ dependencies {
     // kotlin-reflect (KClassImpl) en Paper 1.21.11+ con BytecodeModifyingURLClassLoader.
     implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
     implementation(kotlin("reflect"))
     implementation(kotlin("scripting-common"))
     implementation(kotlin("scripting-jvm"))
