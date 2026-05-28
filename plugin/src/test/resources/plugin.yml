@@ -1,0 +1,6 @@
+name: Galactifun2
+main: io.github.addoncommunity.galactifun.Galactifun2
+version: test
+api-version: '1.21'
+depend:
+  - Slimefun

@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.serialization")
 
-    id("com.gradleup.shadow") version "8.3.2"
+    id("com.gradleup.shadow") version "9.4.1"
     id("net.minecrell.plugin-yml.paper") version "0.6.0"
     id("xyz.jpenilla.run-paper") version "2.3.0"
 
@@ -29,7 +29,7 @@ dependencies {
     // Kotlin + coroutines van en el shadow JAR relocados: paperLibrary mezclaba classloaders y rompía
     // kotlin-reflect (KClassImpl) en Paper 1.21.11+ con BytecodeModifyingURLClassLoader.
     implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0-RC2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
     implementation(kotlin("reflect"))
     implementation(kotlin("scripting-common"))
@@ -50,9 +50,9 @@ dependencies {
     implementation(project(":sf4k-bakedlibs"))
 
     testImplementation(kotlin("test"))
-    testImplementation("io.strikt:strikt-core:0.34.0")
+    testImplementation("io.strikt:strikt-core:0.35.1")
     testImplementation("com.github.seeseemelk:MockBukkit-v1.21:3.133.2")
-    testImplementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-test:2.19.0")
+    testImplementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-test:2.22.0")
 }
 
 group = "io.github.addoncommunity.galactifun"

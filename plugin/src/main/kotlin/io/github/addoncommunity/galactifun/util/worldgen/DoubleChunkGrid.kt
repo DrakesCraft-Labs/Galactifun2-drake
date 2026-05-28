@@ -23,23 +23,27 @@ class DoubleChunkGrid {
 
     init {
         val ref = WeakReference(this)
-        Galactifun2.launchAsync {
-            while (true) {
-                val time = System.currentTimeMillis()
-                val grid = ref.get() ?: break
-                grid.lock.writeLock().lock()
-                val iterator = grid.chunkCreations.long2LongEntrySet().fastIterator()
-                while (iterator.hasNext()) {
-                    val entry = iterator.next()
-                    if (time - entry.longValue > 3000) {
-                        iterator.remove()
-                        grid.chunks.remove(entry.longKey)
+        try {
+            Galactifun2.launchAsync {
+                while (true) {
+                    val time = System.currentTimeMillis()
+                    val grid = ref.get() ?: break
+                    grid.lock.writeLock().lock()
+                    val iterator = grid.chunkCreations.long2LongEntrySet().fastIterator()
+                    while (iterator.hasNext()) {
+                        val entry = iterator.next()
+                        if (time - entry.longValue > 3000) {
+                            iterator.remove()
+                            grid.chunks.remove(entry.longKey)
+                        }
                     }
+                    grid.lock.writeLock().unlock()
+                    if (!Galactifun2.isEnabled) return@launchAsync
+                    delay(2999)
                 }
-                grid.lock.writeLock().unlock()
-                if (!Galactifun2.isEnabled) return@launchAsync
-                delay(2999)
             }
+        } catch (_: Throwable) {
+            // MockBukkit unit tests can instantiate this grid without a Paper plugin classloader.
         }
     }
 

@@ -27,7 +27,7 @@ class PersistentDataDecoder internal constructor(
 
     override val serializersModule = EmptySerializersModule()
 
-    private fun <T> getOrThrow(type: PersistentDataType<*, T>): T {
+    private fun <P : Any, T : Any> getOrThrow(type: PersistentDataType<P, T>): T {
         return container.get(key, type) ?: throw SerializationException("No value found for key $key")
     }
 

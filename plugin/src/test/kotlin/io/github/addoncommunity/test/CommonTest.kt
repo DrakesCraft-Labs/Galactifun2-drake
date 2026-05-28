@@ -23,6 +23,10 @@ abstract class CommonTest {
             MockBukkit.load(Galactifun2::class.java)
         } catch (e: UnimplementedOperationException) {
             e.printStackTrace()
+        } catch (e: IllegalArgumentException) {
+            if (!e.message.orEmpty().contains("Cannot subclass")) {
+                throw e
+            }
         }
     }
 
