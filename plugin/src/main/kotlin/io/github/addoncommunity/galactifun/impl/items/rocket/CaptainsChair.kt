@@ -20,7 +20,6 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage
 import org.bukkit.Location
 import org.bukkit.block.Block
 import org.bukkit.block.data.Directional
-import org.bukkit.entity.Arrow
 import org.bukkit.entity.Pig
 import org.bukkit.entity.Player
 import org.bukkit.event.block.BlockPlaceEvent
@@ -55,7 +54,7 @@ class Seat(
 
     @ItemHandler(SimpleBlockBreakHandler::class)
     private fun onBreak(b: Block) {
-        val entity = b.world.nearbyEntitiesByType<Arrow>(b.location.toStandLocation(), 0.5) {
+        val entity = b.world.nearbyEntitiesByType<Pig>(b.location.toStandLocation(), 0.5) {
             it.persistentDataContainer.has(SEAT_KEY)
         }.firstOrNull() ?: return
         entity.remove()
@@ -64,7 +63,7 @@ class Seat(
     @ItemHandler(BlockUseHandler::class)
     private fun onUse(e: PlayerRightClickEvent) {
         val block = e.clickedBlock.get()
-        val entity = block.world.nearbyEntitiesByType<Arrow>(block.location.toStandLocation(), 0.5) {
+        val entity = block.world.nearbyEntitiesByType<Pig>(block.location.toStandLocation(), 0.5) {
             it.persistentDataContainer.has(SEAT_KEY)
         }.firstOrNull() ?: return
         entity.addPassenger(e.player)
@@ -76,7 +75,7 @@ class Seat(
         private val SEAT_KEY = "seat".key()
 
         fun getSitting(player: Player): Location? {
-            val entity = player.vehicle as? Arrow ?: return null
+            val entity = player.vehicle as? Pig ?: return null
             val location = entity.getPdc<Location>(SEAT_KEY) ?: return null
             if (BlockStorage.check(location) !is Seat) return null
             return location

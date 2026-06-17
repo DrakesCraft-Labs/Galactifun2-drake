@@ -4,8 +4,8 @@ import kotlin.reflect.KProperty
 
 class LazyDouble(private val supplier: () -> Double)  {
 
-    private var value = Double.NaN
-    private var initialized = false
+    @Volatile private var value = Double.NaN
+    @Volatile private var initialized = false
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Double {
         if (!initialized) {

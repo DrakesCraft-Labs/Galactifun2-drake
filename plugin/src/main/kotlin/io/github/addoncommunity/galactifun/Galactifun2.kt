@@ -109,7 +109,7 @@ object Galactifun2 : AbstractAddon() {
         if (!scriptsFolder.exists()) {
             scriptsFolder.mkdirs()
         }
-        for (script in scriptsFolder.listFiles()!!) {
+        for (script in (scriptsFolder.listFiles() ?: emptyArray())) {
             if (script.isFile && script.name.endsWith(".planet.kts")) {
                 logger.log("Loading planet script: ${script.name}")
                 val result = evalScript(script.toScriptSource())

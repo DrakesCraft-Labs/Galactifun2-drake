@@ -104,6 +104,7 @@ internal object SpacePopulator : BlockPopulator() {
 }
 
 private fun magicSelectorFunction(probability: Double): Int {
+    if (probability == 0.0) return 0
     var temp = 2 / probability
     temp *= temp
     return temp.roundToInt()

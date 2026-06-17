@@ -73,8 +73,12 @@ internal class MoonGenerator : WorldGenerator() {
 
     private fun getHeight(worldInfo: WorldInfo, x: Int, y: Int): Int {
         if (!::baseNoise.isInitialized) {
-            baseNoise = SimplexOctaveGenerator(worldInfo.seed, 8)
-            baseNoise.setScale(1 / 64.0)
+            synchronized(this) {
+                if (!::baseNoise.isInitialized) {
+                    baseNoise = SimplexOctaveGenerator(worldInfo.seed, 8)
+                    baseNoise.setScale(1 / 64.0)
+                }
+            }
         }
 
         var base = baseNoiseGrid.getOrSet(x, y) {
@@ -87,8 +91,12 @@ internal class MoonGenerator : WorldGenerator() {
 
     private fun getHeightValue(worldInfo: WorldInfo, x: Int, y: Int): Double {
         if (!::heightNoise.isInitialized) {
-            heightNoise = SimplexOctaveGenerator(worldInfo.seed, 8)
-            heightNoise.setScale(1 / 1024.0)
+            synchronized(this) {
+                if (!::heightNoise.isInitialized) {
+                    heightNoise = SimplexOctaveGenerator(worldInfo.seed, 8)
+                    heightNoise.setScale(1 / 1024.0)
+                }
+            }
         }
 
         val height = heightNoiseGrid.getOrSet(x, y) {

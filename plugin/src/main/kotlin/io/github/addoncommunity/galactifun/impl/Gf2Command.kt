@@ -9,7 +9,7 @@ import io.github.addoncommunity.galactifun.util.bukkit.teleportSpecial
 import io.github.addoncommunity.galactifun.util.bukkit.toBlock
 import io.github.addoncommunity.galactifun.util.menu.PlanetMenu
 import io.github.seggan.sf4k.extensions.plusAssign
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import org.bukkit.Location
 import org.bukkit.entity.FallingBlock
 import org.bukkit.entity.Player

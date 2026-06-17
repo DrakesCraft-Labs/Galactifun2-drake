@@ -21,6 +21,7 @@ import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.Particle
 import org.bukkit.block.BlockFace
+import java.util.concurrent.ConcurrentHashMap
 import org.bukkit.entity.Entity
 import org.bukkit.entity.Player
 import org.bukkit.util.BoundingBox
@@ -30,7 +31,7 @@ object RocketManager {
 
     const val BLOCKS_PER_SCAN = 64
 
-    private val rockets = mutableMapOf<BlockPosition, RocketInfo>()
+    private val rockets = ConcurrentHashMap<BlockPosition, RocketInfo>()
 
     fun register(rocket: RocketInfo) {
         rockets[rocket.commandComputer] = rocket

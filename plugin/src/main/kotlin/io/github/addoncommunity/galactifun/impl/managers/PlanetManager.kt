@@ -67,6 +67,7 @@ object PlanetManager : Listener {
         if (planet.name !in orbits) {
             val border = spaceWorld.worldBorder.size.toInt()
             val maxOrbits = border / OrbitPosition.ORBIT_SIZE
+            if (maxOrbits == 0) error("Space world border too small to fit any orbit (border=$border, orbit size=${OrbitPosition.ORBIT_SIZE})")
             val offset = -maxOrbits / 2
             val orbitPos = OrbitPosition(
                 orbits.size % maxOrbits + offset,

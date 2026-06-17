@@ -133,8 +133,12 @@ class SimplePerlinBuilder : AbstractPerlin() {
 
             private fun getHeight(worldInfo: WorldInfo, x: Int, z: Int): Int {
                 if (!::baseNoise.isInitialized) {
-                    baseNoise = SimplexOctaveGenerator(worldInfo.seed, octaves)
-                    baseNoise.setScale(scale)
+                    synchronized(this) {
+                        if (!::baseNoise.isInitialized) {
+                            baseNoise = SimplexOctaveGenerator(worldInfo.seed, octaves)
+                            baseNoise.setScale(scale)
+                        }
+                    }
                 }
 
                 var height = baseNoise.noise(x.toDouble(), z.toDouble(), frequency, amplitude, true)

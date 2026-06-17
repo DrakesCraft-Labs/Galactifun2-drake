@@ -85,7 +85,7 @@ class CommandComputer(
         val block = e.clickedBlock.getOrNull() ?: return
         val pos = block.blockPosition
         rescanRocket(pos)
-        val info = RocketManager.getInfo(pos)!!
+        val info = RocketManager.getInfo(pos) ?: return
         if (info.blocks.isEmpty()) {
             p.sendMessage(NamedTextColor.RED + "No rocket detected")
             return

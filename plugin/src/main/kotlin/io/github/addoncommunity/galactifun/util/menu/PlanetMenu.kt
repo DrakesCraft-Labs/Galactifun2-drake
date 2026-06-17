@@ -9,7 +9,7 @@ import io.github.addoncommunity.galactifun.util.bukkit.modifyLore
 import io.github.addoncommunity.galactifun.util.bukkit.plus
 import io.github.addoncommunity.galactifun.util.set
 import com.github.drakescraft_labs.slimefun4.utils.ChestMenuUtils
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction
@@ -118,6 +118,7 @@ open class PlanetMenu {
      * @param p The player who closed the menu
      */
     protected open fun onExit(p: Player) {
+        history.remove(p.uniqueId)
         p.closeInventory()
     }
 

@@ -64,15 +64,24 @@ class DoubleChunkGrid {
     operator fun set(cx: Int, cz: Int, x: Int, y: Int, value: Double) {
         val id = cx pack cz
 
-        val chunk = if (chunks.containsKey(id)) {
-            chunks[id]!!
+        lock.readLock().lock()
+        val existing = chunks[id]
+        lock.readLock().unlock()
+
+        val chunk = if (existing != null) {
+            existing
         } else {
-            val chunk = Array(16) { AtomicDoubleArray(DoubleArray(16) { Double.NaN }) }
+            val newChunk = Array(16) { AtomicDoubleArray(DoubleArray(16) { Double.NaN }) }
             lock.writeLock().lock()
-            chunks[id] = chunk
-            chunkCreations[id] = System.currentTimeMillis()
+            // Double-check under write lock to handle concurrent creation
+            val recheck = chunks[id]
+            val result = recheck ?: run {
+                chunks[id] = newChunk
+                chunkCreations[id] = System.currentTimeMillis()
+                newChunk
+            }
             lock.writeLock().unlock()
-            chunk
+            result
         }
         chunk[x][y] = value
     }

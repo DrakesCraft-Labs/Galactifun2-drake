@@ -18,7 +18,7 @@ sealed interface WorldType {
                 return Planet(planet)
             }
             if (world == PlanetManager.spaceWorld) {
-                return Space(PlanetManager.getOrbiting(location)!!)
+                return PlanetManager.getOrbiting(location)?.let { Space(it) }
             }
             return null
         }
