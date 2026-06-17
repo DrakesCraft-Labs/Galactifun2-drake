@@ -93,6 +93,7 @@ tasks.shadowJar {
         relocate("kotlin", "io.github.addoncommunity.galactifun.shadowlibs.kotlin")
         relocate("kotlinx", "io.github.addoncommunity.galactifun.shadowlibs.kotlinx")
         relocate("com.github.shynixn.mccoroutine", "io.github.addoncommunity.galactifun.shadowlibs.mccoroutine")
+        relocate("dev.drake.dough", "io.github.addoncommunity.galactifun.shadowlibs.dough")
     } else {
         archiveClassifier = "unrelocated"
     }
