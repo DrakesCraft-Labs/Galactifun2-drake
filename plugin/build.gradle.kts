@@ -40,6 +40,7 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     compileOnly("com.github.drakescraft_labs:slimefun-core:11.0-Drake-1.21.1-SNAPSHOT")
     implementation("com.github.drakescraft_labs:dough-core:1.3.1-DRAKE-v11-SNAPSHOT")
+    implementation("commons-lang:commons-lang:2.6")
     testImplementation("com.github.drakescraft_labs:slimefun-core:11.0-Drake-1.21.1-SNAPSHOT")
     testImplementation("com.github.drakescraft_labs:dough-core:1.3.1-DRAKE-v11-SNAPSHOT")
 
@@ -94,6 +95,7 @@ tasks.shadowJar {
         relocate("kotlinx", "io.github.addoncommunity.galactifun.shadowlibs.kotlinx")
         relocate("com.github.shynixn.mccoroutine", "io.github.addoncommunity.galactifun.shadowlibs.mccoroutine")
         relocate("dev.drake.dough", "io.github.addoncommunity.galactifun.shadowlibs.dough")
+        relocate("org.apache.commons.lang", "io.github.addoncommunity.galactifun.shadowlibs.commonslang")
     } else {
         archiveClassifier = "unrelocated"
     }
