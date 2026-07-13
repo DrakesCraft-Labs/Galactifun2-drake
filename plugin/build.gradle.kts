@@ -37,7 +37,7 @@ dependencies {
     implementation(kotlin("scripting-jvm-host"))
     implementation(kotlin("script-runtime"))
 
-    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
     compileOnly("com.github.drakescraft_labs:slimefun-core:11.0-Drake-1.21.1-SNAPSHOT")
     implementation("com.github.drakescraft_labs:dough-core:1.3.1-DRAKE-v11-SNAPSHOT")
     implementation("commons-lang:commons-lang:2.6")
@@ -57,7 +57,7 @@ dependencies {
 }
 
 group = "io.github.addoncommunity.galactifun"
-version = "0.0.1-Drake-1.21.1-SNAPSHOT"
+version = "0.0.1-Drake-1.21.11-SNAPSHOT"
 
 kotlin {
     jvmToolchain(21)
