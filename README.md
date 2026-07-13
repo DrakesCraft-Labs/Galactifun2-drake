@@ -4,8 +4,8 @@
 [![Licencia](https://img.shields.io/github/license/DrakesCraft-Labs/Galactifun2-drake)](https://github.com/DrakesCraft-Labs/Galactifun2-drake/blob/1.21-latin/LICENSE)
 [![Ultimo commit](https://img.shields.io/github/last-commit/DrakesCraft-Labs/Galactifun2-drake/1.21-latin)](https://github.com/DrakesCraft-Labs/Galactifun2-drake/commits/1.21-latin)
 
-## Descripción técnica
-Addon espacial para Slimefun con planetas, contenido de exploración y componentes avanzados.
+Galactifun2 Drake es un addon espacial para Slimefun Drake con planetas,
+exploración y componentes de progresión avanzada.
 
 ## Qué añade a Slimefun
 - Expansión de contenido end-game con enfoque de exploración espacial.
@@ -20,16 +20,15 @@ Addon espacial para Slimefun con planetas, contenido de exploración y component
 ## Matriz de compatibilidad
 | Componente | Estado |
 |---|---|
-| Minecraft | 1.21.x |
-| Paper/Purpur | 1.21.x |
-| Slimefun Core Drake | 11.x (línea `1.21-latin`) |
+| Minecraft / Paper / Purpur | **1.21.11** |
+| Slimefun Core Drake | **11** (línea `1.21-latin`) |
 | Java | 21 |
 
 ## Instalación
-1. Descarga el `.jar` de Releases del repositorio.
-2. Copia el archivo en la carpeta `plugins/` del servidor.
-3. Asegura dependencias (`Slimefun`, `ProtocolLib` u otras según addon).
-4. Reinicia el servidor y revisa `logs/latest.log` para validar carga.
+1. Construye el artefacto sombreado de la rama `1.21-latin`.
+2. Respalda el JAR y `plugins/Galactifun2/` antes de una actualización.
+3. Instala un único JAR durante una ventana de reinicio.
+4. Valida en staging un menú, una receta y una interacción de mundo existente.
 
 ## Build local
 ```bash
@@ -44,7 +43,10 @@ Artefacto esperado:
 2. Abrir PR hacia `1.21-latin` con plan de pruebas.
 3. Al mergear, crear tag/release y publicar jar compilado.
 
-Publicar artefacto `-all.jar` y validar carga en Purpur antes del release.
+Publicar el artefacto `-all.jar` y validar carga en Paper/Purpur antes del
+release. El addon no descarga binarios ni aplica actualizaciones en caliente.
 
 ## Relación con el monorepo
-Este repositorio se mantiene en paralelo con `drakes-slimefun-labs` para desarrollo aislado por addon y despliegues independientes.
+Este repositorio es la fuente de desarrollo aislado por addon y despliegues
+independientes. Sus cambios deben preservar IDs, recetas, mundos y datos de
+jugadores existentes.
