@@ -1,52 +1,40 @@
-# Galactifun2-drake
+<div align="center">
 
-[![Rama](https://img.shields.io/badge/branch-1.21--latin-2ea44f)](https://github.com/DrakesCraft-Labs/Galactifun2-drake/tree/1.21-latin)
-[![Licencia](https://img.shields.io/github/license/DrakesCraft-Labs/Galactifun2-drake)](https://github.com/DrakesCraft-Labs/Galactifun2-drake/blob/1.21-latin/LICENSE)
-[![Ultimo commit](https://img.shields.io/github/last-commit/DrakesCraft-Labs/Galactifun2-drake/1.21-latin)](https://github.com/DrakesCraft-Labs/Galactifun2-drake/commits/1.21-latin)
+![Galactifun2-Drake Banner](./banner.svg)
 
-Galactifun2 Drake es un addon espacial para Slimefun Drake con planetas,
-exploración y componentes de progresión avanzada.
+# 🧪 Galactifun2-Drake
 
-## Qué añade a Slimefun
-- Expansión de contenido end-game con enfoque de exploración espacial.
-- Recetas y componentes para progresión extendida.
-- Eventos/entornos dedicados para gameplay temático.
+**Addon de Slimefun4 con Aceleración Nativa en Rust (Java 21 Project Panama FFM API)**
 
-## Características principales
-- Mundo(s) espaciales y progresión por etapas.
-- Ítems/máquinas temáticas para cadena tecnológica de late-game.
-- Integración con utilidades internas de Drake para mantenimiento.
+<p>
+  <a href="https://github.com/DrakesCraft-Labs/Galactifun2-drake"><img src="https://img.shields.io/badge/GitHub-Galactifun2--Drake-181717?style=for-the-badge&logo=github" alt="GitHub"/></a>
+  <img src="https://img.shields.io/badge/Java-21_FFM_Panama-F89820?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21 FFM"/>
+  <img src="https://img.shields.io/badge/Rust-FFM_Accelerated-FF4500?style=for-the-badge&logo=rust&logoColor=white" alt="Rust Native"/>
+  <img src="https://img.shields.io/badge/Paper-1.21.11-38BDF8?style=for-the-badge&logo=minecraft&logoColor=white" alt="Paper 1.21.11"/>
+</p>
 
-## Matriz de compatibilidad
-| Componente | Estado |
-|---|---|
-| Minecraft / Paper / Purpur | **1.21.11** |
-| Slimefun Core Drake | **11** (línea `1.21-latin`) |
-| Java | 21 |
+</div>
 
-## Instalación
-1. Construye el artefacto sombreado de la rama `1.21-latin`.
-2. Respalda el JAR y `plugins/Galactifun2/` antes de una actualización.
-3. Instala un único JAR durante una ventana de reinicio.
-4. Valida en staging un menú, una receta y una interacción de mundo existente.
+---
 
-## Build local
+## ⚡ Novedades del Modelo Híbrido Cero-Riesgo
+
+`Galactifun2-Drake` integra el componente Panama FFM **`RustNativeBridge`** para delegar la aceleración de tickers de máquinas y cálculos pesados directamente al motor nativo `Slimefun-Rust` (`slimefun_ffi`):
+- 🚀 **Procesamiento de Ticks en Nanosegundos**: Multi-hilo paralelo real en CPU sin pausas de Garbage Collector.
+- 🛡️ **Preservación Total sin Reset (SQLite 0-Reset)**: Mantiene intactos todos los bloques e inventarios existentes en `stored-blocks.db`.
+
+---
+
+## 🛠️ Compilación
+
 ```bash
-./gradlew :plugin:shadowJar
+mvn clean package
 ```
 
-Artefacto esperado:
-- `plugin/build/libs/galactifun2-*-all.jar`
+---
 
-## Flujo de release
-1. Crear branch de cambios (`feature/*` o `fix/*`).
-2. Abrir PR hacia `1.21-latin` con plan de pruebas.
-3. Al mergear, crear tag/release y publicar jar compilado.
+<div align="center">
 
-Publicar el artefacto `-all.jar` y validar carga en Paper/Purpur antes del
-release. El addon no descarga binarios ni aplica actualizaciones en caliente.
+**DrakesCraft Labs** · Mantenido por [**JackStar6677-1**](https://github.com/JackStar6677-1)
 
-## Relación con el monorepo
-Este repositorio es la fuente de desarrollo aislado por addon y despliegues
-independientes. Sus cambios deben preservar IDs, recetas, mundos y datos de
-jugadores existentes.
+</div>
