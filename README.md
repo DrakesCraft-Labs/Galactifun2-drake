@@ -1,6 +1,6 @@
 <div align="center">
 
-![Galactifun2-Drake Banner](./banner.svg)
+  <img src="https://raw.githubusercontent.com/DrakesCraft-Labs/Galactifun2-drake/1.21-latin/banner.svg" alt="Galactifun2-drake Banner" width="920" />
 
 # 🧪 Galactifun2-Drake
 
