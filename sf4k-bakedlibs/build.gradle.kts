@@ -3,8 +3,8 @@
  * Changes: Slimefun packages -> com.github.drakescraft_labs.slimefun4; BlockPosition -> io.github.bakedlibs.dough.
  */
 plugins {
-    kotlin("jvm") version "2.3.21"
-    kotlin("plugin.serialization") version "2.3.21"
+    kotlin("jvm") version "2.4.10"
+    kotlin("plugin.serialization") version "2.4.10"
     `java-library`
 }
 
