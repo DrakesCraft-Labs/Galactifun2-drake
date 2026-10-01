@@ -1,3 +1,7 @@
+> ⚠️ **DEPRECATED & ARCHIVED — DO NOT USE IN PRODUCTION / NO USAR EN PRODUCCIÓN**  
+> **ES:** Este plugin **NO SE USA EN PRODUCCIÓN** en DrakesCraft. Fue descartado y reemplazado en su totalidad por **[Galaxyfun](https://github.com/DrakesCraft-Labs/Galaxyfun)** (integrado en el canon cósmico y Suite 6 de StarSuites). Este repositorio se mantiene **exclusivamente como archivo histórico y de mantenimiento pasivo** en caso de pulls o revisiones externas.  
+> **EN:** This repository is **DEPRECATED and NOT USED IN PRODUCTION**. It has been completely superseded by **[Galaxyfun](https://github.com/DrakesCraft-Labs/Galaxyfun)** (StarSuites Suite 6). Kept strictly for historical reference and passive maintenance.
+
 <div align="center">
 
   <img src="https://raw.githubusercontent.com/DrakesCraft-Labs/Galactifun2-drake/1.21-latin/banner.svg" alt="Galactifun2-drake Banner" width="920" />
