@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.squareup:kotlinpoet:2.3.0")
+    implementation("com.squareup:kotlinpoet:2.4.0")
 }
 
 kotlin {

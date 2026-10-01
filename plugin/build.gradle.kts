@@ -53,7 +53,7 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("io.strikt:strikt-core:0.35.1")
     testImplementation("com.github.seeseemelk:MockBukkit-v1.21:3.133.2")
-    testImplementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-test:2.22.0")
+    testImplementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-test:2.23.0")
 }
 
 group = "io.github.addoncommunity.galactifun"
